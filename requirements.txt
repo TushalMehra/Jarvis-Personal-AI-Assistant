@@ -1,0 +1,5 @@
+pywhatkit
+wikipedia
+requests
+beautifulsoup4
+
