@@ -286,7 +286,7 @@ def jarvis():
             try:
                 if "square root of " in command:
                     num = float(command.replace("square root of", "").strip())
-                    result = math.sqrt(result)
+                    result = math.sqrt(num)
 
                 elif "cube root" in command:
                     num = float(command.replace("cube root of", "").strip())
@@ -356,8 +356,8 @@ def jarvis():
             print("Jarvis: I'm not sure about that, but I can search it for you!")
             webbrowser.open(f"https://www.google.com/search?q={query}")
 
-jarvis()
 
-
+if __name__ == "__main__":
+    jarvis()
 
 
