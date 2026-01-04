@@ -1,116 +1,183 @@
-# 🤖 Jarvis – Personal AI Assistant (Python)
+<h1>🤖 Jarvis – Personal AI Assistant</h1>
+<h3>Python-Based Desktop Automation Project</h3>
 
-Jarvis is a **Python-based personal AI assistant** that interacts with users via text commands and performs real-world tasks such as opening applications, searching the web, playing YouTube videos, fetching weather information, performing calculations, and more.
+<hr>
 
-This project demonstrates **Python fundamentals, automation, API usage, and logical problem-solving**, making it suitable for entry-level roles and learning purposes.
+<h2>🧠 Project Overview</h2>
 
----
+<p>
+Jarvis is a <b>Python-based personal AI assistant</b> that interacts with users through
+text-based commands and performs real-world tasks such as opening applications,
+searching the web, playing YouTube videos, fetching weather information,
+and performing calculations.
+</p>
 
-## 🚀 Features
+<p>
+This project demonstrates strong <b>Python fundamentals, automation skills,
+API usage, and logical problem-solving</b>, making it suitable for learning
+and entry-level roles.
+</p>
 
-- 🕒 Tells current time and date (including yesterday & tomorrow)
-- 🌐 Opens websites (Google, YouTube, GitHub, etc.)
-- 🖥 Opens desktop applications (VS Code, MS Word, Excel, Power BI, browsers, etc.)
-- ▶ Plays videos directly on YouTube
-- 📚 Searches topics using Wikipedia with fallback to Google
-- 🧮 Performs mathematical calculations using natural language
-- 🌦 Fetches real-time weather information
-- 🔄 Handles invalid inputs gracefully
-- ❌ Supports exit/quit commands
+<hr>
 
----
+<h2>🚀 Features</h2>
 
-## 🛠 Technologies & Libraries Used
+<ul>
+  <li>🕒 Tells current time and date (including yesterday & tomorrow)</li>
+  <li>🌐 Opens websites (Google, YouTube, GitHub, Instagram, etc.)</li>
+  <li>🖥 Opens desktop applications (VS Code, MS Word, Excel, Power BI, browsers)</li>
+  <li>▶ Plays videos directly on YouTube</li>
+  <li>📚 Searches topics using Wikipedia with Google fallback</li>
+  <li>🧮 Performs mathematical calculations using natural language</li>
+  <li>🌦 Fetches real-time weather information</li>
+  <li>🔄 Handles invalid inputs gracefully</li>
+  <li>❌ Supports exit and quit commands</li>
+</ul>
 
-- **Python 3**
-- `datetime`
-- `webbrowser`
-- `os`
-- `math`
-- `subprocess`
-- `pywhatkit`
-- `wikipedia`
-- `requests`
-- `beautifulsoup4`
+<hr>
 
----
+<h2>🛠 Technologies & Libraries</h2>
 
-## 📂 Project Structure
+<table>
+  <tr>
+    <th>Technology</th>
+    <th>Purpose</th>
+  </tr>
+  <tr>
+    <td>Python 3</td>
+    <td>Core programming language</td>
+  </tr>
+  <tr>
+    <td>datetime</td>
+    <td>Date and time handling</td>
+  </tr>
+  <tr>
+    <td>webbrowser</td>
+    <td>Open websites</td>
+  </tr>
+  <tr>
+    <td>os / subprocess</td>
+    <td>Open system applications</td>
+  </tr>
+  <tr>
+    <td>math</td>
+    <td>Mathematical calculations</td>
+  </tr>
+  <tr>
+    <td>pywhatkit</td>
+    <td>YouTube playback & Google search</td>
+  </tr>
+  <tr>
+    <td>wikipedia</td>
+    <td>Knowledge search</td>
+  </tr>
+  <tr>
+    <td>requests</td>
+    <td>Fetch weather data</td>
+  </tr>
+  <tr>
+    <td>beautifulsoup4</td>
+    <td>Parse weather information</td>
+  </tr>
+</table>
 
+<hr>
+
+<h2>📂 Project Structure</h2>
+
+<pre>
 Jarvis-Personal-AI-Assistant/
 │
-├── Main.py # Main Python file containing Jarvis logic
-├── README.md # Project documentation
-├── requirements.txt # Required Python libraries
-├── .gitignore # Files/folders to ignore in Git
+├── Main.py
+│   └── Core logic for Jarvis assistant
+│
+├── requirements.txt
+│   └── Required Python libraries
+│
+├── .gitignore
+│   └── Files/folders ignored by Git
+│
+└── README.md
+    └── Project documentation
+</pre>
 
+<hr>
 
----
+<h2>⚙ Installation & Setup</h2>
 
-## ⚙ Installation & Setup
-
-### 1️⃣ Clone the repository
-```bash
+<h3>1️⃣ Clone the Repository</h3>
+<pre>
 git clone https://github.com/TushalMehra/Jarvis-Personal-AI-Assistant.git
+</pre>
 
-2️⃣ Navigate to the project folder
-```bash
-
+<h3>2️⃣ Navigate to Project Folder</h3>
+<pre>
 cd Jarvis-Personal-AI-Assistant
+</pre>
 
-3️⃣ Install required dependencies
-
+<h3>3️⃣ Install Dependencies</h3>
+<pre>
 pip install -r requirements.txt
+</pre>
 
-4️⃣ Run the program
-
+<h3>4️⃣ Run the Assistant</h3>
+<pre>
 python Main.py
+</pre>
 
----
+<hr>
 
-## Example Commands
+<h2>💬 Example Commands</h2>
 
-What is the time?
-Open Instagram
-Play shape of you
-Search Python programming
-What is machine learning?
-Calculate 45 * 12
-Weather in Delhi
-Open VS Code
-Exit
+<ul>
+  <li>What is the time?</li>
+  <li>Open Instagram</li>
+  <li>Play Shape of You</li>
+  <li>Search Python programming</li>
+  <li>What is machine learning?</li>
+  <li>Calculate 45 * 12</li>
+  <li>Weather in Delhi</li>
+  <li>Open VS Code</li>
+  <li>Exit</li>
+</ul>
 
+<hr>
 
-## How It Works 
+<h2>⚙ How It Works</h2>
 
-Takes user input in a loop
+<ul>
+  <li>Takes user input continuously using a loop</li>
+  <li>Matches keywords using conditional logic</li>
+  <li>Executes actions via Python standard libraries</li>
+  <li>Uses Wikipedia API for summaries</li>
+  <li>Fetches weather data via web requests</li>
+  <li>Controls applications and websites using OS-level commands</li>
+</ul>
 
-Matches keywords using conditional logic
+<hr>
 
-Executes actions using Python standard libraries and APIs
+<h2>🔮 Future Improvements</h2>
 
-Uses Wikipedia API for summaries
+<ul>
+  <li>Add voice recognition</li>
+  <li>Convert to GUI-based assistant</li>
+  <li>Integrate chatbot / LLM capabilities</li>
+  <li>Improve NLP understanding</li>
+  <li>Add cross-platform support</li>
+</ul>
 
-Uses web scraping for weather information
+<hr>
 
-Opens applications and websites using OS-level commands
+<h2>👤 Author</h2>
 
+<p>
+<b>Tushal Mehra</b><br>
+Aspiring Data Analyst<br>
+</p>
 
-🔮 Future Improvements
-
-Add voice recognition
-
-Convert to GUI-based assistant
-
-Add chatbot/LLM integration
-
-Improve NLP handling
-
-Cross-platform support
-
-👤 Author
-
-Tushal Mehra
-Aspiring Data Analyst | Python | SQL | Power BI
-
-📌 GitHub: https://github.com/TushalMehra
+<p>
+📌 GitHub:
+<a href="https://github.com/TushalMehra" target="_blank">
+https://github.com/TushalMehra
+</a>
+</p>
