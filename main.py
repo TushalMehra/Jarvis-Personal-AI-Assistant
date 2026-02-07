@@ -197,7 +197,7 @@ def jarvis():
                 pywhatkit.playonyt(video)   # play the first video 
 
             else: 
-                print("Jarvis: Please tell me what to play (e.g., 'play lovely by billie eilish').")
+                print("Jarvis: Please tell me what to play (e.g., 'play Wildflower by billie eilish').")
 
         elif ("search" in command or 
                 "who is" in command or 
@@ -231,7 +231,7 @@ def jarvis():
 
                 try:
 
-                    summary = wikipedia.summary(topic, sentences =2, auto_suggest = True, redirect = True) 
+                    summary = wikipedia.summary(topic, sentences = 8, auto_suggest = True, redirect = True) 
                     
                     print(f"Jarvis: {summary}")
 
@@ -240,12 +240,8 @@ def jarvis():
                      # If multiple meanings exist, pick the first one
                     print(f"Jarvis: There are multiple results. Showing info about '{e.options[0]}'.")
 
-                    summary =wikipedia.summary(e.options[0], sentences=2)
+                    summary =wikipedia.summary(e.options[0], sentences= 8)
                     print(f"Jarvis: {summary}")
-
-                except Exception as e:
-                    print(f"Jarvis: Searching Google for '{command}'...")
-                    webbrowser.open(f"https://www.google.com/search?q={command}")
 
 
                 except wikipedia.PageError:
@@ -253,10 +249,9 @@ def jarvis():
                     print(f"Jarvis: I couldn’t find an exact page for '{topic}', let me open Google.")
                     webbrowser.open(f"https://www.google.com/search?q={topic}")
 
-                except Exception:
-                    # For all other unexpected issues
-                    print(f"Jarvis: Something went wrong while searching on Wikipedia.")
-                    webbrowser.open(f"https://www.google.com/search?q={topic}")
+                except Exception as e:
+                    print(f"Jarvis: Searching Google for '{command}'...")
+                    webbrowser.open(f"https://www.google.com/search?q={command}")
 
             else: 
                 print("Jarvis: Please tell me what to search for.")
@@ -272,7 +267,7 @@ def jarvis():
             
             print("Jarvis: Shutting down the system")
 
-            os.system("shutdown /s /t 3")
+            os.system("shutdown /r /t 3")
 
         elif ("what is" in command or "calculate" in command or "plus" in command or "minus" in command or 
               "multiply" in command or "divide" in command or "add" in command or 
@@ -322,42 +317,48 @@ def jarvis():
 
         elif "weather" in command:
             import requests
-            from bs4 import BeautifulSoup
+
+            API_KEY = "1f8a07bcc34e86c99586e5ef7589fc92"
 
             try:
-
+                # extract city name
                 if "in" in command:
                     city = command.split("in", 1)[-1].strip()
+                else:
+                    city = "New Delhi"
 
-                else: 
-                    city = "New Delhi"   # default city
+                url = "https://api.openweathermap.org/data/2.5/weather"
 
-                # Fetch weather data
+                params = {
+                    "q": city,
+                    "appid": API_KEY,
+                    "units": "metric"
+                    }
+            
+                response = requests.get(url, params=params)
+                data = response.json()
 
-                url = f"https://www.google.com/search?q=weather+in+{city}"
+                if data["cod"] != 200:
+                    print("Jarvis: City not found.")
+                else:
+                    temp = data["main"]["temp"]
+                    condition = data["weather"][0]["description"]
 
-                html = requests.get(url).text
+                    print(f"Jarvis: It's {temp}°C in {city} with {condition}.")
 
-                soup = BeautifulSoup(html, "html.parser")
-
-                # Extract temperature and condition
-
-                temp = soup.find("span", class_="wob_t q8U8x").text
-
-                condition = soup.find("div", class_="VQF4g").span.text.lower()
-
-                print(f"Jarvis: It's {temp}°C in {city} with {condition}.")
-
-            except Exception:
+            except Exception as e:
                 print("Jarvis: Sorry, I couldn’t fetch the weather right now.")
+
 
         else:
             query = command.replace(" ","+")
             print("Jarvis: I'm not sure about that, but I can search it for you!")
             webbrowser.open(f"https://www.google.com/search?q={query}")
 
-
 if __name__ == "__main__":
     jarvis()
+
+
+
 
 
