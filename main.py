@@ -318,7 +318,7 @@ def jarvis():
         elif "weather" in command:
             import requests
 
-            API_KEY = "1f8a07bcc34e86c99586e5ef7589fc92"
+            API_KEY = "os.getenv("OPENWEATHER_API_KEY")"
 
             try:
                 # extract city name
@@ -357,6 +357,7 @@ def jarvis():
 
 if __name__ == "__main__":
     jarvis()
+
 
 
 
